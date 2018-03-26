@@ -11,9 +11,8 @@
   * How are you managing keys?
   * How are you encrypting and protecting your data in transit? (SSL)
   * How do you ensure that you have the appropriate incident response?
-
-  *  How are you managing AWS service limits for your accounts?
-  *  How are you planning your network topology on AWS?
+  **How are you managing AWS service limits for your accounts?**
+  **How are you planning your network topology on AWS?**
   *  How does your system adapt to changes in demand?
   *  How are you monitoring AWS resources?
   *  How are you executing change?

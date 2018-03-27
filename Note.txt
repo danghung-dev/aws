@@ -1,0 +1,16 @@
+Accessing a Bucket
+You can access your bucket using the Amazon S3 console. Using the console UI, you can perform almost all bucket operations without having to write any code.
+
+If you access a bucket programmatically, note that Amazon S3 supports RESTful architecture in which your buckets and objects are resources, each with a resource URI that uniquely identifies the resource.
+
+Amazon S3 supports both virtual-hosted–style and path-style URLs to access a bucket.
+
+In a virtual-hosted–style URL, the bucket name is part of the domain name in the URL. For example:  
+
+http://bucket.s3.amazonaws.com
+
+http://bucket.s3-aws-region.amazonaws.com.
+
+In a virtual-hosted–style URL, you can use either of these endpoints. If you make a request to the http://bucket.s3.amazonaws.com endpoint, the DNS has sufficient information to route your request directly to the Region where your bucket resides.
+
+For more information, see Virtual Hosting of Buckets.

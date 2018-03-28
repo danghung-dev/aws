@@ -36,9 +36,51 @@ EBS volumes (remote storage devices)
 -After you create a volume, you can attach it to any EC2 instance in the same Availability Zone
 -An EBS volume is off-instance storage that can persist independently from the life of an instance.
 -EBS volumes support live configuration changes while in production which means that you can modify the volume type, volume size, and IOPS capacity without service interruptions.
+Cách tính IOPS, through put, latency
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html
+IOPS là số lần đọc ghi / giây
+throughput là số MB đọc ghi / giây
+
+Chú ý usecase cho Provisioned IOPS SSD (io1)
+Critical business applications that require sustained IOPS performance, or more than 10,000 IOPS or 160 MiB/s of throughput per volume
+Large database workloads, such as:
+MongoDB
+Cassandra
+Microsoft SQL Server
+MySQL
+PostgreSQL
+Oracle
 
 7. An elastic network interface (ENI) is a logical networking component in a VPC that represents a virtual network card. You can attach a network interface to an EC2 instance in the following ways:
 
 When it's running (hot attach)
 When it's stopped (warm attach)
 When the instance is being launched (cold attach).
+
+8. Cloud Formation
+Dùng để tạo infrastructure từ template (JSON)
+Không tính tiền cloud formation, chỉ tính tiền các dịch vụ đc tạo ra
+Cloud Formation > Elastic Beanstalk
+
+9. AWS Elastic Beanstalk
+Provides an environment to easily deploy and run applications in the cloud. It is integrated with developer tools and provides a one-stop experience for you to manage the lifecycle of your applications.
+
+10. Elastic Map Reduce (EMR)
+https://kipalog.com/posts/Tong-quan-mo-hinh-lap-trinh-MapReduce
+Mapreduce là một mô hình lập trình, thực hiện quá tình xử lý tập dữ liệu lớn. Mapreduce gồm 2 pha : map và reduce.
+Hàm Map : Các xử lý một cặp (key, value) để sinh ra một cặp (keyI, valueI) - key và value trung gian. Dữ liệu này input vào hàm Reduce.
+Hàm Reduce : Tiếp nhận các (keyI, valueI) và trộn các cặp (keyI, valueI) trung gian , lấy ra các valueI có cùng keyI.
+
+Việc của lập trình viên là quan tâm tới 2 hàm Map và Reduce. Còn các vấn đề khác như : phân chia các dữ liệu đầu vào, lịch trình thực thi các machines, handling các machines failure, quản lý việc giao tiếp giữa các machines là việc của hệ thống run-time.
+=> Lập trình viên có thể không có kinh nghiệm về hệ thống song song và phân tán vẫn dễ dàng vận hành một hệ thống phân tán lớn.
+Áp dụng mô hình MapReduce chạy trên lượng lớn các machine cỡ hàng ngàn machine và data lên đến mức Terabytes.
+
+Các job sau dễ dàng sử dụng Mapreduce:
+
+Thống kê số từ khóa xuất hiện trong các documents.
+Thống kê số documents có chứa từ khóa.
+Thống kê số câu match với pattern trong các documents.
+Thống kê số URLs xuất hiện trong các web pages.
+Thống kê số lượt truy cập các URLs.
+Thống kê số từ khóa trên các hostnames.
+Distributed Sort.

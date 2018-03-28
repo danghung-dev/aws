@@ -1,5 +1,5 @@
 1. Accessing a Bucket
-In a virtual-hosted–style URL, the bucket name is part of the domain name in the URL. For example:  
+In a virtual-hosted–style URL, the bucket name is part of the domain name in the URL. For example:
 http://bucket.s3.amazonaws.com
 http://bucket.s3-aws-region.amazonaws.com.
 
@@ -23,9 +23,22 @@ AWS budgets
 4.  SQS Message Lifecycle:
 
  4.1 Component 1 sends Message A to a queue, and the message is distributed across the Amazon SQS servers redundantly.
- 4.2 When Component 2 is ready to process a message, it consumes messages from the queue, and Message A is returned. While Message A is being processed, it remains in the queue and isn't returned to subsequent receive requests for the duration of the visibility timeout. 
+ 4.2 When Component 2 is ready to process a message, it consumes messages from the queue, and Message A is returned. While Message A is being processed, it remains in the queue and isn't returned to subsequent receive requests for the duration of the visibility timeout.
  4.3 Component 2 deletes Message A from the queue to prevent the message from being received and processed again once the visibility timeout expires.
 
 5. How many types of block devices does Amazon Elastic Compute Cloud service support?
 Instance store volumes (virtual devices whose underlying hardware is physically attached to the host computer for the instance)
 EBS volumes (remote storage devices)
+
+6. EBS
+-When you create an EBS volume in an Availability Zone, it is automatically replicated within that zone to prevent data loss due to failure of any single hardware component.
+-An EBS volume can only be attached to one EC2 instance at a time.
+-After you create a volume, you can attach it to any EC2 instance in the same Availability Zone
+-An EBS volume is off-instance storage that can persist independently from the life of an instance.
+-EBS volumes support live configuration changes while in production which means that you can modify the volume type, volume size, and IOPS capacity without service interruptions.
+
+7. An elastic network interface (ENI) is a logical networking component in a VPC that represents a virtual network card. You can attach a network interface to an EC2 instance in the following ways:
+
+When it's running (hot attach)
+When it's stopped (warm attach)
+When the instance is being launched (cold attach).

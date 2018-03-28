@@ -5,7 +5,7 @@ SWF thì có
 
 Typical database block sizes range from 2 KB to 32 KB. Amazon Redshift uses a block size of 1 MB
 
-For all new AWS accounts there is a soft limit of 20 EC2 instances per region. 
+For all new AWS accounts there is a soft limit of 20 EC2 instances per region.
 
 Q. You have a high performance compute application and you need to minimize network latency between EC2 instances as much as possible. What can you do to achieve this?
 
@@ -25,6 +25,11 @@ Modify the Auto Scaling group cool-down timers & modify the Amazon CloudWatch al
 Q. You are a solutions architect who has been asked to do some consulting for a US company that produces re-useable rocket parts. They have a new web application that needs to be built and this application must be stateless. Which three services could you use to achieve this?
 
 RDS, DynamoDB & Elasticache.
+
+## de thi so 1
+Q. Which is a correct example of a synchronous data replication?
+
+Q. What is the AWS Lambda resource limit for the amount of ephemeral disk capacity allocated per invocation?
 
 ## Last exam in Udemy
 

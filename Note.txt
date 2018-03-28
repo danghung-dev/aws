@@ -1,16 +1,31 @@
-Accessing a Bucket
-You can access your bucket using the Amazon S3 console. Using the console UI, you can perform almost all bucket operations without having to write any code.
-
-If you access a bucket programmatically, note that Amazon S3 supports RESTful architecture in which your buckets and objects are resources, each with a resource URI that uniquely identifies the resource.
-
-Amazon S3 supports both virtual-hosted–style and path-style URLs to access a bucket.
-
+1. Accessing a Bucket
 In a virtual-hosted–style URL, the bucket name is part of the domain name in the URL. For example:  
-
 http://bucket.s3.amazonaws.com
-
 http://bucket.s3-aws-region.amazonaws.com.
 
 In a virtual-hosted–style URL, you can use either of these endpoints. If you make a request to the http://bucket.s3.amazonaws.com endpoint, the DNS has sufficient information to route your request directly to the Region where your bucket resides.
-
 For more information, see Virtual Hosting of Buckets.
+
+2. When you stop EC2 instance, the following happens:
+
+-The instance performs a normal shutdown and stops running; its status changes to stopping and then stopped.
+-Any Amazon EBS volumes remain attached to the instance, and their data persists.
+-Any data stored in the RAM of the host computer or the instance store volumes of the host computer are gone.
+-In most cases, the instance is migrated to a new underlying host computer when it's started.
+-EC2-Classic: AWS releases the public and private IPv4 addresses for the instance when you stop the instance, and assign new ones when you restart it.
+-EC2-VPC: The instance retains its private IPv4 addresses and any IPv6 addresses when stopped and restarted. AWS releases the public IPv4 address and assign a new one when you restart it.
+-EC2-Classic: AWS disassociates any Elastic IP address that's associated with the instance. You're charged for Elastic IP addresses that aren't associated with an instance. When you restart the instance, you must associate the Elastic IP address with the instance; AWS doesn't do this automatically.
+-EC2-VPC: The instance retains its associated Elastic IP addresses. You're charged for any Elastic IP addresses associated with a stopped instance
+
+3. Which service can help you manage the budgets for all your AWS resources?
+AWS budgets
+
+4.  SQS Message Lifecycle:
+
+ 4.1 Component 1 sends Message A to a queue, and the message is distributed across the Amazon SQS servers redundantly.
+ 4.2 When Component 2 is ready to process a message, it consumes messages from the queue, and Message A is returned. While Message A is being processed, it remains in the queue and isn't returned to subsequent receive requests for the duration of the visibility timeout. 
+ 4.3 Component 2 deletes Message A from the queue to prevent the message from being received and processed again once the visibility timeout expires.
+
+5. How many types of block devices does Amazon Elastic Compute Cloud service support?
+Instance store volumes (virtual devices whose underlying hardware is physically attached to the host computer for the instance)
+EBS volumes (remote storage devices)

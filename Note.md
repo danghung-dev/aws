@@ -153,3 +153,31 @@ Storage Gateway – Regional
   * Ensure that sufficient Provisioned IOPS allocated for your workload. Inadequate I/O can lengthen failover times. Database recovery requires I/O.
   * Use smaller transactions. Database recovery relies on transactions, so break up large transactions into multiple smaller transactions to shorten failover time
   * Test failover for your DB instance to understand how long the process takes for your use case and to ensure that the application that accesses your DB instance can automatically connect to the new DB instance after failover.
+
+14. ECS
+
+* ECS has native method to route traffic to containers
+* Simply attach a container target group to an ALB, everything is handled by amazon ecs 
+* Docker can automatically assign port to container, so you just specify a container port, host port set to 0.  If use load banacer, host port set to 0
+
+* 14.1 Task Draining
+  * Draining state automatically notifies ALB to stop sending traffic to that target
+  * When request are complete, the container is safely stopped
+  * Allo zero-downtime deployment of container app updates
+
+* 14.2 ALB Application Load Balancer
+
+  * Make routing decisions based on app protocol such as hostname or path
+
+* 14.3 Auto-scaling
+  * works to scale up and down the number of EC2 instances in a cluster, and the containers deployed on them
+  * is integrated with the ALB to stop traffic to container before they are shutdown
+
+* 14.4 Cloudwatch
+
+  * Log
+    * Setting IAM role - ecs can send log to cloudwatch
+    * Setting log driver
+
+* 14.5 Price
+  * There is no additional charge for Amazon ECS. You pay for AWS resources (e.g. EC2 instances or EBS volumes) you create to store and run your application.

@@ -7,6 +7,40 @@ Typical database block sizes range from 2 KB to 32 KB. Amazon Redshift uses a bl
 
 For all new AWS accounts there is a soft limit of 20 EC2 instances per region.
 
+### You would like to create a mirror image of your production environment in another region for disaster recovery purposes. Which of the following AWS resources do not need to be recreated in the second region? (Choose 2 answers)
+* Route 53 Record Sets
+* IAM Roles
+* Elastic IP Addresses (EIP) (are specific to a region)
+* EC2 Key Pairs (are specific to a region)
+* Launch configurations
+* Security Groups (are specific to a region)
+### When using the following AWS services, which should be implemented in multiple Availability Zones for high availability solutions? Choose 2 answers
+* Amazon DynamoDB (already replicates across AZs)
+* Amazon Elastic Compute Cloud (EC2)
+* Amazon Elastic Load Balancing
+* Amazon Simple Notification Service (SNS) (Global Managed Service)
+* Amazon Simple Storage Service (S3) (Global Managed Service)
+### What is the scope of an EBS volume?
+* VPC
+* Region
+* Placement Group
+* Availability Zone
+### What is the scope of AWS IAM?
+* Global (IAM resources are all global; there is not regional constraint)
+* Availability Zone
+* Region
+* Placement Group
+### What is the scope of an EC2 EIP?
+* Placement Group
+* Availability Zone
+* Region (An Elastic IP address is tied to a region and can be associated only with an instance in the same region. Refer link)
+* VPC
+### What is the scope of an EC2 security group?
+* Availability Zone
+* Placement Group
+* Region (A security group is tied to a region and can be assigned only to instances in the same region)
+* VPC
+
 Q. You have a high performance compute application and you need to minimize network latency between EC2 instances as much as possible. What can you do to achieve this?
 
 Create a placement group within an Availability Zone and place the EC2 instances within that placement group.

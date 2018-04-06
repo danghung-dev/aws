@@ -60,6 +60,17 @@ Q. You are a solutions architect who has been asked to do some consulting for a 
 
 RDS, DynamoDB & Elasticache.
 
+## De thi UK king
+Q3. Which of the following would you use to list your AWS Import/Exportjobs?
+
+A. Amazon RDS
+
+B. AWS Import/Export Web Service Tool
+
+C. Amazon S3 REST API
+
+D. AWS Elastic Beanstalk 
+
 ## de thi so 1
 Q. Which is a correct example of a synchronous data replication?
 

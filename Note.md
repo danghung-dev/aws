@@ -181,3 +181,8 @@ Storage Gateway – Regional
 
 * 14.5 Price
   * There is no additional charge for Amazon ECS. You pay for AWS resources (e.g. EC2 instances or EBS volumes) you create to store and run your application.
+
+15. Bastion Hosts
+
+https://docs.aws.amazon.com/quickstart/latest/linux-bastion/architecture.html
+Including bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet. After you set up your bastion hosts, you can access the other instances in your VPC through Secure Shell (SSH) connections on Linux. Bastion hosts are also configured with security groups to provide fine-grained ingress control.
